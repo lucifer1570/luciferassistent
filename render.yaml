@@ -6,6 +6,6 @@ services:
     startCommand: python plan_bot.py
     envVars:
       - key: BOT_TOKEN
-        sync: false       # you'll set it manually in the dashboard
+        sync: false   # Set this in the Render dashboard
       - key: GROUP_IDS
-        sync: false
+        sync: false   # Optional: comma-separated group IDs, e.g., -100123,-100456
