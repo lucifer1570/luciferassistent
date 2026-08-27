@@ -53,7 +53,9 @@ if _group_env:
             except ValueError:
                 print(f"⚠️  Skipping invalid GROUP_ID value: {g!r}")
 else:
-    GROUP_IDS = [-1004359507902, -1003182588648]
+    # Empty allow-list means respond in all groups where the bot is present.
+    # Set GROUP_IDS in Render to restrict responses to specific group IDs.
+    GROUP_IDS = []
 
 
 def _is_allowed_group(chat_id):
@@ -460,8 +462,7 @@ def main():
 
     app.add_handler(
         MessageHandler(
-            filters.TEXT
-            & filters.Regex(r"^/\d+\s*[,\s]\s*\d+(?:@\w+)?$"),
+            filters.Regex(r"^/\d+\s*[,\s]\s*\d+(?:@\w+)?$"),
             handle_plan,
         )
     )
