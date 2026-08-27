@@ -2,6 +2,7 @@ services:
   - type: worker
     name: plan-bot
     env: python
+    numInstances: 1
     buildCommand: pip install -r requirements.txt
     startCommand: python plan_bot.py
     envVars:
