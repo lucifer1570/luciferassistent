@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: plan-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python plan_bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false       # you'll set it manually in the dashboard
+      - key: GROUP_IDS
+        sync: false
