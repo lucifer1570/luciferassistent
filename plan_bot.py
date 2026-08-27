@@ -53,9 +53,8 @@ if _group_env:
             except ValueError:
                 print(f"⚠️  Skipping invalid GROUP_ID value: {g!r}")
 else:
-    # Empty allow-list means respond in all groups where the bot is present.
-    # Set GROUP_IDS in Render to restrict responses to specific group IDs.
-    GROUP_IDS = []
+    # Default groups authorized to receive plan responses.
+    GROUP_IDS = [-1004359507902, -1003182588648]
 
 
 def _is_allowed_group(chat_id):
