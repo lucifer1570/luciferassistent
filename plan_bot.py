@@ -381,7 +381,6 @@ HELP_TEXT = (
     "The bot replies with the plan as a table image."
 )
 
-
 async def handle_start(
     update: Update,
     context: ContextTypes.DEFAULT_TYPE
